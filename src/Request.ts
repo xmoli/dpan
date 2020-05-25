@@ -1,4 +1,4 @@
-import * as server from '../../server.config.json'
+import * as server from '../server.config.json'
 import { LogMiddleware } from './LogMiddleware'
 import { SessionStorageMidleware } from './SessionMiddleware'
 
