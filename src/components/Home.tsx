@@ -1,13 +1,15 @@
 import React, { useContext } from 'react'
 import {useState} from 'react'
 import { Redirect } from 'react-router-dom'
+import Grid from '@material-ui/core/Grid'
 import Nav from './Nav'
 import Sidebar from './Sidebar'
 import Tool from './Tool'
 import Content from './Content'
-import {myFile, TYPE} from './File'
+import {TYPE} from './File'
 import { myRequest } from '../Request'
 import {DISPLAY} from './Content'
+import styles from './home.module.css'
 
 async function fetchHome (){
     const res = await fetch(new myRequest().request())
@@ -21,29 +23,36 @@ async function fetchPath (path: string){
     const result = json
     return result
 }
-export function Home (pros: any) {
+export default function Home (pros: any) {
 
     const [display,setDisplay] = useState(DISPLAY.list)
     const [content, setContent] = useState([
-        {name:'not found',type: TYPE.direct, uploadDate: new Date(), size: 0}
+        {name:'not found1',type: TYPE.direct, uploadDate: new Date().getTime(), size: 0},
+        {name:'not found2',type: TYPE.direct, uploadDate: new Date().getTime(), size: 0},
+        {name:'not found3',type: TYPE.direct, uploadDate: new Date().getTime(), size: 0},
+        {name:'not found4',type: TYPE.direct, uploadDate: new Date().getTime(), size: 0},
+        {name:'not found5',type: TYPE.direct, uploadDate: new Date().getTime(), size: 0},
+        {name:'not found6',type: TYPE.direct, uploadDate: new Date().getTime(), size: 0},
+        {name:'not found7',type: TYPE.direct, uploadDate: new Date().getTime(), size: 0}
     ])
-    const online = useContext(pros.OnlineContext)
+    const online = useContext(React.createContext(true))
+
     if (!online) {
-        <Redirect to='login'/>
+        return <Redirect to='login'/>
     }
     if (pros.routeParams) {
         fetchHome()
             .then(c => setContent(c))
-    } else {
+    } /* else {
         fetchPath(pros.routeParams.path)
             .then( c => setContent(c))
-    }
+    } */
     return (
-        <>
+        <React.Fragment>
         <Nav />
         <Sidebar/>
         <Content display={display} content={content}/>
         <Tool/>
-        </>
+        </React.Fragment>
     )
 }

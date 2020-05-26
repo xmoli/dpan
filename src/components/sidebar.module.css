@@ -1,0 +1,5 @@
+.list {
+    max-width: 12vw;
+    display: flex;
+    flex-direction: column;
+}

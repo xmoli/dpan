@@ -1,0 +1,5 @@
+.operationBar {
+    display: flex;
+    justify-content: space-between;
+    transform: translate(1em,1em)
+}

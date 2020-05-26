@@ -9,10 +9,9 @@ export enum TYPE {
     ppt,
     unknow,
 }
-
 export interface myFile {
     name: string
     type: TYPE
-    uploadDate: Date
+    uploadDate: number
     size: number
 }

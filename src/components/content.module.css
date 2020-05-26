@@ -1,0 +1,10 @@
+.content {
+    transform: translateY(1em);
+    position: relative;
+    top: 6rem;
+}
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin-right: 0.5em;
+}

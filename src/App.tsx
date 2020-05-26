@@ -1,6 +1,6 @@
-import React from 'react';
-import {HashRouter as Router, Route, Redirect} from 'react-router-dom'
-import './App.css';
+import React, { useContext } from 'react';
+import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom'
+
 import {Information} from './components/Information'
 import {Task} from './components/Task'
 import {Recovery} from './components/Recovery'
@@ -8,18 +8,20 @@ import {Login} from './components/Login'
 import {Register} from './components/Register'
 
 import {useState} from 'react'
-import { Home } from './components/Home';
+import Home from './components/Home';
 
-const OnlineContext = React.createContext(useState(false))
 function App() {
-  const online = useState(false)
-
+  const OnlineContext = React.createContext(true)
   return (
-    <OnlineContext.Provider value={online}>
+    <OnlineContext.Provider value={true}>
       <Router>
         <Redirect from='/' to='home'/>
-        <Route exact path='/home' components={Home}/>
-        <Route path='/home/:path' components={Home}/>
+        <Route exact path='/home'>
+          <Home/>
+        </Route>
+        <Route exact path='/home/:path'>
+          <Home/>
+        </Route>
         <Route path='/task' components={Task}/>
         <Route path='/information' components={Information}/>
         <Route path='/recovery' components={Recovery}/>
