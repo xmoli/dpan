@@ -7,8 +7,7 @@ import {Link} from 'react-router-dom'
 import styles from './nav.module.css'
 import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
-import {List, ListItem, ListItemText, ListItemIcon, Toolbar, AppBar} from '@material-ui/core'
-import Checkbox from '@material-ui/core/Checkbox'
+import {Toolbar, AppBar} from '@material-ui/core'
 
 const useStyles = makeStyles( theme => ({
     appbar: {
@@ -18,7 +17,7 @@ const useStyles = makeStyles( theme => ({
 export default function Nav (pros: any) {
     const classes = useStyles()
     return (
-            <AppBar className={styles.nav}>
+            <AppBar className={clsx(styles.nav, classes.appbar)}>
                 <Container maxWidth="md">
                 <Toolbar>
                     <IconButton className={styles.link} color="inherit"><i className="fa fa-ellipsis-v" aria-hidden="true"></i></IconButton>

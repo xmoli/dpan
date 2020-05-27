@@ -4,11 +4,38 @@
     top: 3rem;
 }
 .listItem {
-    border: 2px solid transparent;
+    border: 1px solid transparent;
+    /* margin-top: 0.4em; */
 }
+.listAll {
+    border: 1px solid transparent;
+}
+.listAllChecked {
+    border-radius: 40% 10%;
+    border: 1px solid blue;
+}
+.link {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: space-between;
+}
+.link>* {
+    margin-right: 1em;
+}
+.link:link {color: black;} /* 未访问的链接 */
+.link:visited {color:black;} /* 已访问的链接 */
+.link:hover {color:black;} /* 鼠标划过链接 */
+.link:active {color:black;} /* 已选中的链接 */
+
 .listItem:hover{
-    border-radius: 50%;
-    border: 2px solid blue;
+    border-radius: 10% 40% 40% 10%;
+    border: 1px solid blue;
+    cursor: pointer;
+}
+.listItemChecked {
+    border-radius: 10% 40% 40% 10%;
+    border: 1px solid blue;
 }
 .mypaper {
     background-color: rgba(255, 255, 255, 0.753) !important;
