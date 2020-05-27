@@ -1,9 +1,7 @@
 import React, { useContext } from 'react'
 import {useState} from 'react'
 import { Redirect } from 'react-router-dom'
-import Grid from '@material-ui/core/Grid'
 import Nav from './Nav'
-import Sidebar from './Sidebar'
 import Tool from './Tool'
 import Content from './Content'
 import {TYPE} from './File'
@@ -50,7 +48,7 @@ export default function Home (pros: any) {
     return (
         <React.Fragment>
         <Nav />
-        <Sidebar/>
+        {/* <Sidebar/> */}
         <Content display={display} content={content}/>
         <Tool/>
         </React.Fragment>

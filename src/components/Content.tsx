@@ -3,6 +3,8 @@ import {myFile} from './File'
 import {List, ListItem, ListItemText, ListItemIcon} from '@material-ui/core'
 import Grid from '@material-ui/core/Grid'
 import Checkbox from '@material-ui/core/Checkbox'
+import Paper from '@material-ui/core/Paper'
+import Container from '@material-ui/core/Container'
 import styles from './content.module.css'
 import clsx from 'clsx'
 export enum DISPLAY{
@@ -23,25 +25,27 @@ export default function Content (pros: ContentPros) {
         case DISPLAY.list :
         default:
             return (
-                <Grid container className={clsx(styles.content)}>
+                <Container maxWidth="md" className={clsx(styles.content)}>
                     <Grid item lg={3} md={2} xs={false}/>
-                    <Grid item lg={6} md={7} sm={10} xs={12}>
-                    <List >
-                    {
-                        pros.content.map((i,index)=>{
-                            return  <ListItem key={index.toString()}>
-                                        <ListItemIcon className={styles.checkbox}>
-                                            <Checkbox color="primary"/>
-                                             <i className={clsx("fa","fa-lg","fa-folder")}></i></ListItemIcon>
-                                        <ListItemText>{i.name}</ListItemText>
-                                        <ListItemText>{i.size}</ListItemText>
-                                        <ListItemText>{i.uploadDate}</ListItemText>
-                                    </ListItem>
-                        })
-                    }
-                    </List>
+                    <Grid item lg={6} sm={10} xs={12}>
+                    <Paper className={styles.mypaper}>
+                        <List >
+                        {
+                            pros.content.map((i,index)=>{
+                                return  <ListItem key={index.toString()} className={styles.listItem}>
+                                            <ListItemIcon className={styles.checkbox}>
+                                                <Checkbox color="primary"/>
+                                                <i className={clsx("fa","fa-lg","fa-folder")}></i></ListItemIcon>
+                                            <ListItemText>{i.name}</ListItemText>
+                                            <ListItemText>{i.size}</ListItemText>
+                                            <ListItemText>{i.uploadDate}</ListItemText>
+                                        </ListItem>
+                            })
+                        }
+                        </List>
+                    </Paper>
                     </Grid>
-                </Grid>
+                </Container>
             )
     }
 }

@@ -1,7 +1,18 @@
 .content {
     transform: translateY(1em);
     position: relative;
-    top: 6rem;
+    top: 3rem;
+}
+.listItem {
+    border: 2px solid transparent;
+}
+.listItem:hover{
+    border-radius: 50%;
+    border: 2px solid blue;
+}
+.mypaper {
+    background-color: rgba(255, 255, 255, 0.753) !important;
+    
 }
 .checkbox {
     display: flex;

@@ -1,5 +1,25 @@
-.operationBar {
-    display: flex;
-    justify-content: space-between;
-    transform: translate(1em,1em)
+.nav {
+    background: #fff !important;
+    z-index: 1400;
+    box-shadow: none !important;
+    color: white !important;
+}
+.nav a {
+    color: white;
+}
+.nav button{
+    border: 2px solid transparent;
+}
+.nav button:hover{
+    border: 2px solid blue;
+}
+.link::before{
+    z-index: -1;
+    position: absolute;
+    content: '';
+    transform: skewX(-45deg);
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius: 50%;
 }

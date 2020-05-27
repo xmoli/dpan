@@ -15,7 +15,7 @@ function App() {
   return (
     <OnlineContext.Provider value={true}>
       <Router>
-        <Redirect from='/' to='home'/>
+{/*         <Redirect from='/' to='home'/> */}
         <Route exact path='/home'>
           <Home/>
         </Route>
@@ -25,7 +25,9 @@ function App() {
         <Route path='/task' components={Task}/>
         <Route path='/information' components={Information}/>
         <Route path='/recovery' components={Recovery}/>
-        <Route path='/login' components={Login}/>
+        <Route path='/login'>
+          <Login/>
+        </Route>
         <Route path='/register' components={Register}/>
       </Router>
     </OnlineContext.Provider>
