@@ -7,15 +7,22 @@ import {Recovery} from './components/Recovery'
 import {Login} from './components/Login'
 import {Register} from './components/Register'
 
-import {useState} from 'react'
 import Home from './components/Home';
 
+const OnlineContext = React.createContext(false)
+
 function App() {
-  const OnlineContext = React.createContext(true)
+  const online = true
   return (
-    <OnlineContext.Provider value={true}>
+    <OnlineContext.Provider value={online}>
       <Router>
-{/*         <Redirect from='/' to='home'/> */}
+        <Route exact path='/'>
+          {online ? 
+          <Redirect to="/home"/>
+          :
+          <Redirect to="/login"/>
+          }
+        </Route>
         <Route exact path='/home'>
           <Home/>
         </Route>
@@ -34,4 +41,4 @@ function App() {
   )
 }
 
-export default App;
+export {App,OnlineContext}

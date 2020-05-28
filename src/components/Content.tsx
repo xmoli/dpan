@@ -22,6 +22,7 @@ export interface ContentPros {
     content: Array<myFile>
 }
 export default function Content (pros: ContentPros) {
+    document.title = "云文件"
     document.onselectstart = function(){return false}
     document.onkeypress = (e) => {
         e.preventDefault()
@@ -34,7 +35,7 @@ export default function Content (pros: ContentPros) {
         }
     const [checked, setChecked] = useState(new Array(pros.content.length).fill(false))
     const [allChecked, setAllChecked] = useState(false)
-    const [shiftKey, setShiftKey] = useState(false)
+    /* const [shiftKey, setShiftKey] = useState(false) */
     const toggleChecked = (i : number) => {
             checked[i] = !checked[i]
             let count = checked.filter(i => i)

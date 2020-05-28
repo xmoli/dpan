@@ -8,6 +8,7 @@ import {TYPE} from './File'
 import { myRequest } from '../Request'
 import {DISPLAY} from './Content'
 import styles from './home.module.css'
+import {OnlineContext} from '../App'
 
 async function fetchHome (){
     const res = await fetch(new myRequest().request())
@@ -33,10 +34,10 @@ export default function Home (pros: any) {
         {name:'not found6',type: TYPE.direct, uploadDate: new Date().getTime(), size: 0},
         {name:'not found7',type: TYPE.direct, uploadDate: new Date().getTime(), size: 0}
     ])
-    const online = useContext(React.createContext(true))
+    const online = useContext(OnlineContext)
 
     if (!online) {
-        return <Redirect to='login'/>
+        return <Redirect to='/login'/>
     }
     if (pros.routeParams) {
         fetchHome()
