@@ -7,10 +7,10 @@ import Checkbox from '@material-ui/core/Checkbox'
 
 export function Register () {
     const online = useContext(OnlineContext)
-    const [name, setName] = useState()
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
-    const [keep, setKeep] = useState()
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [keep, setKeep] = useState(false)
     const submitHandle = (e:any) => {
         e.preventDefault()
     }

@@ -12,7 +12,7 @@ import Home from './components/Home';
 const OnlineContext = React.createContext(false)
 
 function App() {
-  const online = false
+  const online = true
   return (
     <OnlineContext.Provider value={online}>
       <Router>

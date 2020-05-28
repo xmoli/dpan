@@ -8,9 +8,9 @@ import FormLabel from '@material-ui/core/FormLabel'
 
 export function Login () {
     const online = useContext(OnlineContext)
-    const [name, setName] = useState()
-    const [password, setPassword] = useState()
-    const [keep, setKeep] = useState()
+    const [name, setName] = useState('')
+    const [password, setPassword] = useState('')
+    const [keep, setKeep] = useState(false)
     const submitHandle = (e:any) => {
         e.preventDefault()
     }
