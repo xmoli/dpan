@@ -12,7 +12,7 @@ import Home from './components/Home';
 const OnlineContext = React.createContext(false)
 
 function App() {
-  const online = true
+  const online = false
   return (
     <OnlineContext.Provider value={online}>
       <Router>
@@ -35,7 +35,9 @@ function App() {
         <Route path='/login'>
           <Login/>
         </Route>
-        <Route path='/register' components={Register}/>
+        <Route path='/register'>
+          <Register/>
+        </Route>
       </Router>
     </OnlineContext.Provider>
   )

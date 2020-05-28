@@ -2,51 +2,59 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 100vh;
     width: 500px;
     margin: 0 auto;
+    padding: 8px;
+    transform: translate(-3em,-3em);
+}
+.h1 {
+    border-radius: 1px;
     padding: 8px;
 }
 .form {
     display: flex;
     flex-direction: column;
     max-width: 300px;
-    align-items: center;
-    transform: translateY(-5em);
+    align-items: flex-start;  
+    padding: 24px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.39); 
 }
-.form input ::before{
-    position: absolute;
-    z-index: -1;
-    content: '';
-    padding: 8px;
-    border-radius: 20%;
-    background-color: black;
-    transform: skewX(-40deg);
-}
-.form input {
+.form input.input {
     min-height: 2em;
     margin-top: 16px;
     min-width: 16em;
     border-radius: 4px;
     padding: 8px;
     outline: none;
-    border: 2px solid transparent
-}
-.form ::before {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #0a0a0ad0;
-    border-radius: 50%;
-    transform: skewX(-45deg);
+    border: 2px solid transparent;
+    border-left: 2px solid black;
 }
 .form input:focus {
-    border: 2px solid blue;
+    border: 1px solid blue;
     transition: all 0.3s ease;
+}
+input.submit {
+    border: 1px solid black;
+    min-height: 2em;
+    margin-top: 16px;
+    min-width: 16em;
+    border-radius: 4px;
+    padding: 8px;
+    outline: none;
 }
 .submit:hover{
     cursor: pointer;
-    border: 2px solid blue
+    border: 1px solid blue;
+}
+.tips {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 12rem;
+    font-size: 0.7rem;
+    margin-top: 16px;
+    margin-left: -1em;
 }
