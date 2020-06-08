@@ -8,18 +8,19 @@
     color: white;
 }
 .nav button{
-    border: 2px solid transparent;
+    border: 1px solid transparent;
 }
 .nav button:hover{
-    border: 2px solid blue;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
 }
 .link::before{
     z-index: -1;
     position: absolute;
     content: '';
-    transform: skewX(-45deg);
+    transform: skewX(-30deg);
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color: #72ba28;
     border-radius: 50%;
 }

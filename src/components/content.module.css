@@ -12,7 +12,7 @@
 }
 .listAllChecked {
     border-radius: 40% 10%;
-    border: 1px solid blue;
+    border: 1px solid #72ba28;
 }
 .link {
     display: flex;
@@ -23,19 +23,17 @@
 .link>* {
     margin-right: 1em;
 }
-.link:link {color: black;} /* 未访问的链接 */
-.link:visited {color:black;} /* 已访问的链接 */
-.link:hover {color:black;} /* 鼠标划过链接 */
-.link:active {color:black;} /* 已选中的链接 */
+.link {color: #333;} /* 未访问的链接 */
+
 
 .listItem:hover{
     border-radius: 10% 40% 40% 10%;
-    border: 1px solid blue;
+    border: 1px solid #72ba28;
     cursor: pointer;
 }
 .listItemChecked {
     border-radius: 10% 40% 40% 10%;
-    border: 1px solid blue;
+    border: 1px solid #72ba28;
 }
 .mypaper {
     background-color: rgba(255, 255, 255, 0.753) !important;

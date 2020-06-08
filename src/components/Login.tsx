@@ -39,7 +39,7 @@ export function Login () {
                         保持登录
                     </label>
                     <label>
-                    <Link to="/register">没有账户？注册</Link>
+                    <Link to="/register" color="primary">没有账户？注册</Link>
                     </label>
                 </div>
             </form>

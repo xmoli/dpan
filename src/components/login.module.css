@@ -17,37 +17,38 @@
     display: flex;
     flex-direction: column;
     max-width: 300px;
-    align-items: flex-start;  
-    padding: 24px;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.39); 
+    align-items: center;  
 }
 .form input.input {
     min-height: 2em;
     margin-top: 16px;
-    min-width: 16em;
+    width: 16em;
     border-radius: 4px;
     padding: 8px;
     outline: none;
-    border: 2px solid transparent;
-    border-left: 2px solid black;
+    border: 1px solid transparent;
+    border-left: 1px solid #72ba28;
+    border-right: 1px solid #72ba28;
 }
 .form input:focus {
-    border: 1px solid blue;
+    color: white;
+    border: 1px solid #72ba28;
+    background: #72ba28;
     transition: all 0.3s ease;
 }
 input.submit {
-    border: 1px solid black;
+    border: 1px solid #72ba28;
+    background: white;
     min-height: 2em;
     margin-top: 16px;
-    min-width: 16em;
+    width: 16em;
     border-radius: 4px;
     padding: 8px;
     outline: none;
 }
 .submit:hover{
     cursor: pointer;
-    border: 1px solid blue;
+    border: 1px solid #72ba28;
 }
 .tips {
     display: flex;
@@ -57,4 +58,7 @@ input.submit {
     font-size: 0.7rem;
     margin-top: 16px;
     margin-left: -1em;
+}
+.tips a {
+    color: #72ba28;
 }
